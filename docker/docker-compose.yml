@@ -6,20 +6,18 @@ services:
   db:
     image: mysql:8.0
     build:
-      context: ./Database
+      context: ../Database
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 'r00t'
     ports:
       - '3306:3306'
-    volumes:
-      - ./containers/db:/var/lib/mysql
     networks: 
       - banco
   front:
     image: node:12.2.0-alpine
     build:
-      context: ./FrontendReact
+      context: ../FrontendReact
     ports:
       - 3000:3000
     command: npm start
@@ -30,7 +28,7 @@ services:
   app:
     image: 'mcr.microsoft.com/dotnet/core/aspnet:2.2-stretch-slim'
     build:
-      context: ./BackendApi/BackendApi
+      context: ../BackendApi/BackendApi
     ports:
       - 8080:80
       - 3443:443
