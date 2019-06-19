@@ -19,7 +19,7 @@ services:
   front:
     image: node:12.2.0-alpine
     build:
-      context: ./FrontReact
+      context: ./FrontendReact
     ports:
       - 3000:3000
     command: npm start
