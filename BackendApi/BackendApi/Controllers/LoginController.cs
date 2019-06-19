@@ -12,6 +12,10 @@ namespace BackendApi.Controllers
     {
         ILoginBusiness _loginBusiness;
 
+        public LoginController(ILoginBusiness loginBusiness)
+        {
+            _loginBusiness = loginBusiness;
+        }
         // POST api/values
         [AllowAnonymous]
         [HttpPost]

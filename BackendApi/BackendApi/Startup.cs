@@ -34,14 +34,16 @@ namespace BackendApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            #region Definindo a conexão com o banco de dados.
             var connection = Configuration["SqlConnection:SqlConnectionString"];
-            services.AddDbContext<BdContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<BdContext>(options => options.UseMySql(connection));
+            #endregion
+
+            #region Configurando a autenticação e validação de.
 
             var signingConfigurations = new SigningConfigurations();
             services.AddSingleton(signingConfigurations);
-
             var tokenConfigurations = new TokenConfigurations();
-
             new ConfigureFromConfigurationOptions<TokenConfigurations>(
                 Configuration.GetSection("TokenConfigurations"))
                 .Configure(tokenConfigurations);
@@ -56,8 +58,8 @@ namespace BackendApi
             {
                 var paramsValidation = bearerOptions.TokenValidationParameters;
                 paramsValidation.IssuerSigningKey = signingConfigurations.Key;
-                paramsValidation.ValidateAudience = true; //tokenConfigurations.Audience;
-                paramsValidation.ValidateIssuer = true; //tokenConfigurations.Issuer;
+                paramsValidation.ValidateAudience = true; 
+                paramsValidation.ValidateIssuer = true; 
                 paramsValidation.ValidateIssuerSigningKey = true;
                 paramsValidation.ValidateLifetime = true;
                 paramsValidation.ClockSkew = TimeSpan.Zero;
@@ -69,9 +71,11 @@ namespace BackendApi
                     .RequireAuthenticatedUser().Build());
             });
 
+            #endregion
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            // Dependency injection
+            // Configurando as injeções de dependência.
             services.AddScoped<IUserRepository, UserRepositoryImpl>();
             services.AddScoped<IUserBusiness, UserBusinessImpl>();
             services.AddScoped<ILoginBusiness, LoginBusinessImpl>();

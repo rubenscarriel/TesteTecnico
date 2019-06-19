@@ -1,20 +1,15 @@
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2-stretch-slim AS base
+FROM microsoft/dotnet:2.2-sdk-alpine AS build-env
 WORKDIR /app
+
+COPY *.csproj ./
+RUN dotnet restore
+
+COPY . ./
+RUN dotnet publish -c Release -o out
+
+FROM microsoft/dotnet:2.2-aspnetcore-runtime-alpine
+WORKDIR /app
+COPY --from=build-env /app/out .
 EXPOSE 80
 EXPOSE 443
-
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
-WORKDIR /src
-COPY ["BackendApi/BackendApi.csproj", "BackendApi/"]
-RUN dotnet restore "BackendApi/BackendApi.csproj"
-COPY . .
-WORKDIR "/src/BackendApi"
-RUN dotnet build "BackendApi.csproj" -c Release -o /app
-
-FROM build AS publish
-RUN dotnet publish "BackendApi.csproj" -c Release -o /app
-
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "BackendApi.dll"]

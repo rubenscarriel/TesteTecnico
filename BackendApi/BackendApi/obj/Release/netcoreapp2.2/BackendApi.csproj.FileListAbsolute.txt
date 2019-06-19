@@ -1,0 +1,14 @@
+D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\bin\Release\netcoreapp2.2\BackendApi.deps.json
+D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\bin\Release\netcoreapp2.2\BackendApi.runtimeconfig.json
+D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\bin\Release\netcoreapp2.2\BackendApi.runtimeconfig.dev.json
+D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\bin\Release\netcoreapp2.2\BackendApi.dll
+D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\bin\Release\netcoreapp2.2\BackendApi.pdb
+D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\obj\Release\netcoreapp2.2\BackendApi.csprojAssemblyReference.cache
+D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\obj\Release\netcoreapp2.2\BackendApi.csproj.CoreCompileInputs.cache
+D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\obj\Release\netcoreapp2.2\BackendApi.RazorAssemblyInfo.cache
+D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\obj\Release\netcoreapp2.2\BackendApi.RazorAssemblyInfo.cs
+D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\obj\Release\netcoreapp2.2\BackendApi.AssemblyInfoInputs.cache
+D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\obj\Release\netcoreapp2.2\BackendApi.AssemblyInfo.cs
+D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\obj\Release\netcoreapp2.2\BackendApi.RazorTargetAssemblyInfo.cache
+D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\obj\Release\netcoreapp2.2\BackendApi.dll
+D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\obj\Release\netcoreapp2.2\BackendApi.pdb

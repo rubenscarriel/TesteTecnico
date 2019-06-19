@@ -3,7 +3,6 @@ D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\bin\Debug\netcoreapp
 D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\bin\Debug\netcoreapp2.2\BackendApi.runtimeconfig.dev.json
 D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\bin\Debug\netcoreapp2.2\BackendApi.dll
 D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\bin\Debug\netcoreapp2.2\BackendApi.pdb
-D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\obj\Debug\netcoreapp2.2\BackendApi.csprojAssemblyReference.cache
 D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\obj\Debug\netcoreapp2.2\BackendApi.csproj.CoreCompileInputs.cache
 D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\obj\Debug\netcoreapp2.2\BackendApi.RazorAssemblyInfo.cache
 D:\Projetos\TesteTecnico\TesteTecnico\BackendApi\BackendApi\obj\Debug\netcoreapp2.2\BackendApi.RazorAssemblyInfo.cs
