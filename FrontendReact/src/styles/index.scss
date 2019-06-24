@@ -1,0 +1,55 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 600px;
+}
+
+.loginPage {
+
+    .mensagemTitulo {
+        background-color: rgb(123, 59, 207);
+        color: white;
+        padding: 200 50 50 50;
+        font-size: 30px;
+    }
+
+    .rodape {
+        background-color: rgba(221, 221, 221, 0.342);
+        height: 300px;
+    }
+}
+
+.text-field, .password-field {
+    height: 50px;
+    padding: 10px 12px;
+    
+    &__label {
+        color: grey;
+    }
+
+    &__input {
+        width: 100%;
+        border: none;
+        padding-top: 10px;
+        font-size: 24px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.link-button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 10px 12px;
+  
+}

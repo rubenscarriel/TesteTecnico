@@ -18,9 +18,9 @@ services:
     image: node:12.2.0-alpine
     build:
       context: ../FrontendReact
+    restart: always
     ports:
-      - 3001:3000
-    command: npm start
+      - 80:80
     networks: 
       - web
     depends_on: 
@@ -29,6 +29,7 @@ services:
     image: 'mcr.microsoft.com/dotnet/core/aspnet:2.2-stretch-slim'
     build:
       context: ../BackendApi/BackendApi
+    restart: always
     ports:
       - 8080:80
       - 3443:443
