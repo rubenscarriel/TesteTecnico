@@ -15,7 +15,7 @@ services:
     networks: 
       - banco
   front:
-    image: node:12.2.0-alpine
+    image: nginx:alpine
     build:
       context: ../FrontendReact
     restart: always
@@ -26,7 +26,7 @@ services:
     depends_on: 
       - app
   app:
-    image: 'mcr.microsoft.com/dotnet/core/aspnet:2.2-stretch-slim'
+    image: microsoft/dotnet:2.2-aspnetcore-runtime-alpine
     build:
       context: ../BackendApi/BackendApi
     restart: always
