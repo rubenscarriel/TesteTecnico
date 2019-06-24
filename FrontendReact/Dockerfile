@@ -4,11 +4,11 @@ COPY . /app
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 RUN npm install --silent
-RUN npm start --silent
+RUN npm run build --silent
 
 # Stage 2 - the production environment
 FROM nginx:alpine
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY /app/config/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=react-build /app/dist /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

@@ -4,7 +4,8 @@
   "description": "Teste técnico para demonstração de habilidade",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
   },
   "author": "Rubens Carriel",
   "license": "ISC",
