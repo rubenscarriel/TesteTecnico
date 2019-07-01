@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using BackendApi.Business;
 using BackendApi.Business.Implementations;
-using BackendApi.Model.Context;
 using BackendApi.Repositories;
+using BackendApi.Repositories.Context;
 using BackendApi.Repositories.Implementations;
 using BackendApi.Security.Configurations;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace BackendApi
@@ -75,6 +71,16 @@ namespace BackendApi
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            // Configurando o swagger.
+            services.AddSwaggerGen(swgConfig => {
+                swgConfig.SwaggerDoc("v1", 
+                    new Swashbuckle.AspNetCore.Swagger.Info
+                    {
+                        Title = "Swagger - Documentação API - Teste Técnco",
+                        Version = "v1"
+                    });
+            });
+
             // Configurando as injeções de dependência.
             services.AddScoped<IUserRepository, UserRepositoryImpl>();
             services.AddScoped<IUserBusiness, UserBusinessImpl>();
@@ -94,6 +100,15 @@ namespace BackendApi
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(swgUIConfig => {
+                swgUIConfig.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger - Documentação API - Teste Técnco");
+            });
+
+            var options = new RewriteOptions();
+            options.AddRedirect("^$", "swagger");
+            app.UseRewriter(options);
 
             app.UseHttpsRedirection();
             app.UseMvc();

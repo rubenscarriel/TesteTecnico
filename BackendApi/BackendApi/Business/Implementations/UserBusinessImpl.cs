@@ -1,6 +1,4 @@
-﻿using System;
-using BackendApi.Model;
-using BackendApi.Model.Context;
+﻿using BackendApi.Model;
 using BackendApi.Repositories;
 
 namespace BackendApi.Business.Implementations
