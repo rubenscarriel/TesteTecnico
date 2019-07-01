@@ -4,7 +4,8 @@ networks:
   web:
 services:
   db:
-    image: mysql:8.0
+    container_name: mysql
+    image: testetecnico/mysql
     build:
       context: ../Database
     restart: always
@@ -15,7 +16,8 @@ services:
     networks: 
       - banco
   front:
-    image: nginx:alpine
+    container_name: nginx
+    image: testetecnico/nginx
     build:
       context: ../FrontendReact
     restart: always
@@ -26,7 +28,8 @@ services:
     depends_on: 
       - app
   app:
-    image: microsoft/dotnet:2.2-aspnetcore-runtime-alpine
+    container_name: api
+    image: testetecnico/api-netcore
     build:
       context: ../BackendApi/BackendApi
     restart: always
